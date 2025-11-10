@@ -40,9 +40,9 @@ class App extends React.Component
     league.membre1.age += nb
     this.setState({league: league})
   }
-  buttonClick = () => {
-    let show = !this.state.isShow
-    this.setState({isShow: show})
+  handleShow = () => {
+    const isShow = !this.state.isShow
+    this.setState({isShow})
   }
   render() {
     const list = Object.keys(this.state.league).map(iteration => {
@@ -65,7 +65,7 @@ class App extends React.Component
         {
           this.state.isShow ? <strong>Je suis là </strong> : null
         }
-        <button onClick={this.buttonClick}>
+        <button onClick={this.handleShow}>
           {
             this.state.isShow ? 'cacher' : "Montrer"
           }
